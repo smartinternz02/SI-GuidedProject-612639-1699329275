@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('https://img.freepik.com/free-photo/frame-pills-doctor-equipment_23-2148533084.jpg?w=996&t=st=1700136188~exp=1700136788~hmac=666b7423c9e9ce08451430c7bdcea53cc0522bdeaf9478b038e066efb476c8a6') no-repeat;
+  background-size: cover;
+
+  background-position:center;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+
+/* NAV AREA STYLING */
+header {
+  position: fixed;
+  /*no gaps on top, header fills top*/
+  top: 0;
+  /*no gaps on top, header fills top*/
+  left: 0;
+  /*no gaps on left, header fills left*/
+  width: 100%;
+  background: black;
+  padding: 20px;
+  display: flex;
+  /* flexible display */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 2em;
+  color: white;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navigation a {
+  /* makes sure navs are at top */
+  position: relative;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-right: 100px;
+}
+
+/* effects for hovering thing */
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  /*makes sure the effect starts along w word*/
+  bottom: -6px;
+  /*makes sure the effect starts at bottom of word*/
+  width: 50%;
+  /*effecr will be 50%of the area*/
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0); /*It modifies the abscissa (horizontal, x-coordinate) of each element point by a constant factor*/
+  transition: transform .5s;
+}
+
+/*invoke after when u hover*/
+.navigation a:hover::after {
+  transform-origin:left;  /*effect goes from left to right*/
+  transform: scaleX(1);
+
+}
+
+.navigation {
+  padding-right: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.navigation .login {
+  width: 100px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: white;
+  font-weight: 500;
+  transition: .5s
+    /* how long it takes to transition */
+}
+
+/* what to do when i hover over button */
+.navigation .login:hover {
+  background: white;
+  color: black;
+}
+
+/* CONTENT AREA STYLING */

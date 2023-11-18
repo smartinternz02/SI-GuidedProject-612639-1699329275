@@ -1,0 +1,287 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    background: url('https://as2.ftcdn.net/v2/jpg/01/35/90/49/1000_F_135904907_M6IcyL2ayYfzXvb6wEkeEskiiBhjP11b.jpg') no-repeat ;
+    color:white;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+  
+  /* NAV AREA STYLING */
+  header {
+    position: fixed;
+    /*no gaps on top, header fills top*/
+    top: 0;
+    /*no gaps on top, header fills top*/
+    left: 0;
+    /*no gaps on left, header fills left*/
+    width: 100%;
+    background: black;
+    padding: 20px;
+    display: flex;
+    /* flexible display */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+  }
+  
+  .logo {
+    font-size: 2em;
+    color: white;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .navigation a {
+    /* makes sure navs are at top */
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding-right: 100px;
+  }
+  
+  /* effects for hovering thing */
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    /*makes sure the effect starts along w word*/
+    bottom: -6px;
+    /*makes sure the effect starts at bottom of word*/
+    width: 50%;
+    /*effecr will be 50%of the area*/
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0); /*It modifies the abscissa (horizontal, x-coordinate) of each element point by a constant factor*/
+    transition: transform .5s;
+  }
+  
+  /*invoke after when u hover*/
+  .navigation a:hover::after {
+    transform-origin:left;  /*effect goes from left to right*/
+    transform: scaleX(1);
+  
+  }
+  
+  .navigation {
+    padding-right: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+  
+  .navigation .login {
+    width: 100px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    transition: .5s
+      /* how long it takes to transition */
+  }
+  
+  /* what to do when i hover over button */
+  .navigation .login:hover {
+    background: white;
+    color: black;
+  }
+  
+  /* CONTENT AREA STYLING */
+ .title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    background:rgba(0, 0, 0,0.85);
+    border-radius: 30px;
+    margin-left: 35%;
+    margin-top: 8%;
+    margin-right: 35%;
+    width: auto;
+ }
+ .title h2{
+    padding-top: 30px;
+    
+ }
+ /* .symptoms {
+    
+    margin-left: 25%;
+    margin-top: 50px;
+    height:200px;
+    width:200px;
+    background: rgba(90, 158, 222,0.6);
+    border-radius: 6px;
+
+ } */
+ .symptoms ul{
+    background: transparent;
+    list-style: none;
+    align-items: left;
+    font:  italic bold 20px 'Poppins', sans-serif;
+    margin: 20px;
+ }
+ .symptoms ul li{
+    margin: 20px;
+    font-weight: 800;
+ }
+form{
+    margin-top: 30px;
+}
+form label{
+    font-weight: 800;
+}
+.sub .btn{
+    height:40px;
+    width: 300px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    font-weight: 600;
+    font-size: 22px;
+    transition: .5s;
+}
+.sub .btn:hover{
+    background: rgba(23, 22, 22,0.7);
+    color:white;
+    border:none;
+    outline:none;
+}
+#symptom1{
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  transition: .5s;
+}
+#symptom1:hover{
+  background: white;
+  color: black;
+  border-radius: 40px;
+}
+#symptom2{
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  transition: .5s;
+}
+#symptom2:hover{
+  background: white;
+  color: black;
+  border-radius: 40px;
+}
+#symptom3{
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  transition: .5s;
+}
+#symptom3:hover{
+  background: white;
+  color: black;
+  border-radius: 40px;
+}
+#symptom4{
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  transition: .5s;
+}
+#symptom4:hover{
+  background: white;
+  color: black;
+  border-radius: 40px;
+}
+#symptom5{
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  transition: .5s;
+}
+#symptom5:hover{
+  background: white;
+  color: black;
+  border-radius: 40px;
+}
+#symptom6{
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  transition: .5s;
+}
+#symptom6:hover{
+  background: white;
+  color: black;
+  border-radius: 40px;
+}
+#symptom7{
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  transition: .5s;
+}
+#symptom7:hover{
+  background: white;
+  color: black;
+  border-radius: 40px;
+}
+#symptom8{
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  transition: .5s;
+}
+#symptom8:hover{
+  background: white;
+  color: black;
+  border-radius: 40px;
+}

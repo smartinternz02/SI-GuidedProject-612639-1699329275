@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Disease Predictor</title>
+  <link href="./static/css/Home.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h2 class="logo"> Disease Predictor</h2> <!--Our logo-->
+    <nav class="navigation">  <!--nav links-->
+      <a href="/home">About</a>
+      <a href="/calculator">Predictor</a>
+      <a href="/team">Team</a>  
+      <button class="login" onclick="SameTab()"> 
+          Logout 
+      </button> 
+
+      <script> 
+          function SameTab() { 
+              window.location.href = 
+                  "/"; 
+          } 
+      </script> <!--redirects to login page-->
+    </nav>
+  </header>
+  <!--end of nav bar code-->
+  <!--beginning of content-->
+  <!-- <div class="wrapper"> -->
+    <div class='title'>
+    <h2>About</h2>
+    </div>
+    <div class='content'>
+    <p>In today’s fast paced world, there is little to no time spared for healthcare. Even after developing severe symptoms to various diseases     patients do not see a doctor. Using Google to type in our symptoms does not lead to good results, it always boils down to one stereotypical disease. So people have stopped using Google to look for their symptoms or the probable disease. <br> <br> Catering to all the problems stated above, we have developed a model which can predict up to 42 diseases when given symptoms as input. This model can be used by doctors for consulting patients online based on the output of the model or this model can be used by patients for preventive diagnosis and self care as the charges to visit a doctor are high. This model does not ask for personalised data such as name, age, gender, religion, address, etc.<br> <br>You can use this web application anytime you feel you might be suffering from a disease and the model will give the probable disease based on the symptoms. Now you can take a call whether to visit a doctor or no.</p>
+    </div>
+  <!-- </div> -->
+  <script src="script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

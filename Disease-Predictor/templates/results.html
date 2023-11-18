@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Disease Predictor</title>
+  <link href="./static/css/result.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <header>
+    <h2 class="logo"> Disease Predictor</h2> <!--Our logo-->
+    <nav class="navigation">  <!--nav links-->
+      <a href="/home">About</a>
+      <a href="/calculator">Predictor</a>
+      <a href="/team">Team</a>  
+      <button class="login" onclick="SameTab()"> 
+          Logout 
+      </button> 
+
+      <script> 
+          function SameTab() { 
+              window.location.href = 
+                  "/"; 
+          } 
+      </script>
+    </nav>
+  </header>
+  <!--end of nav bar code-->
+  <!--beginning of content-->
+  <!-- <div class="wrapper"> -->
+
+    <div class="content">
+      <br>
+                      <b>  <h2 style="color:rgb(221, 28, 28)"> {{ prediction_text }}<b></h2>
+         
+      </div>
+</body>
+
+</html>

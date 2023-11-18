@@ -1,0 +1,36 @@
+body{
+  background: url("https://cdn.pixabay.com/photo/2015/02/24/09/13/virus-647210_1280.jpg") no-repeat;
+  background-size: cover;
+}
+h1{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 200px;
+  font-weight: 600px;
+  color: white;
+  font-size: 80px;
+}
+
+.login{
+    width: 125px;
+    height: 65px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    margin-left: 45%;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    transition: .5s
+    
+    
+      /* how long it takes to transition */
+  }
+.login:hover{
+  background: white;
+  color:black;
+}

@@ -1,0 +1,166 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+background:url('https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/05/13204533/Teamwork.png') no-repeat;
+  background-size: cover;
+}
+
+
+/* NAV AREA STYLING */
+header {
+  position: fixed;
+  /*no gaps on top, header fills top*/
+  top: 0;
+  /*no gaps on top, header fills top*/
+  left: 0;
+  /*no gaps on left, header fills left*/
+  width: 100%;
+  background: black;
+  padding: 20px;
+  display: flex;
+  /* flexible display */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 2em;
+  color: white;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navigation a {
+  /* makes sure navs are at top */
+  position: relative;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-right: 100px;
+}
+
+/* effects for hovering thing */
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  /*makes sure the effect starts along w word*/
+  bottom: -6px;
+  /*makes sure the effect starts at bottom of word*/
+  width: 50%;
+  /*effecr will be 50%of the area*/
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0); /*It modifies the abscissa (horizontal, x-coordinate) of each element point by a constant factor*/
+  transition: transform .5s;
+}
+
+/*invoke after when u hover*/
+.navigation a:hover::after {
+  transform-origin:left;  /*effect goes from left to right*/
+  transform: scaleX(1);
+
+}
+
+.navigation {
+  padding-right: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.navigation .login {
+  width: 100px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: white;
+  font-weight: 500;
+  transition: .5s
+    /* how long it takes to transition */
+}
+
+/* what to do when i hover over button */
+.navigation .login:hover {
+  background: white;
+  color: black;
+}
+.main {
+  display: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 12%;
+}
+
+.full-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.box-top {
+  display: absolute;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.comment-box {
+  width: 500px;
+  background: white;
+  padding: 35px;
+  margin: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.name strong {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  font-size: 18px;
+}
+
+.name span {
+  font-family: 'Poppins', sans-serif;
+  color: gray;
+  margin-top: 20px;
+}
+
+.comment p {
+  color: black;
+}
+title{
+  text-align: center;
+}

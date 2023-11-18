@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Predictor</title>
+  <link href="./static/css/calculator.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+    <body>
+        <header>
+          <h2 class="logo"> Disease Predictor</h2> <!--Our logo-->
+          <nav class="navigation">  <!--nav links-->
+            <a href="/home">About</a>
+            <a href="/calculator">Predictor</a>
+            <a href="/team">Team</a>  
+            <button class="login" onclick="SameTab()"> 
+                Logout 
+            </button> 
+      
+            <script> 
+                function SameTab() { 
+                    window.location.href = 
+                        "/"; 
+                } 
+            </script> <!--redirects to login page-->
+          </nav>
+        </header>
+        
+        <div class="title">
+          <h1>Predictor</h1>
+          <h2>Choose 8 symptoms for the best prediction</h2>
+          <form action="/predict" method="post">
+            <input type="hidden" name="form_identifier" value="symptom_form">
+              <label for="symptom1">Symptom 1: </label>
+              <select name="symptom1" id="symptom1">
+                <optgroup label="dermatological symptoms">
+                  <option value="None">None</option>
+                  <option value="itching">Itching</option>
+                  <option value="yellow_crust_ooze">Yellow crust ooze</option>
+                  <option value="inflammatory_nails">Inflammatory nails</option>
+                </optgroup>
+                <optgroup label="Respiratory symptoms">
+                  <option value="continuous_sneezing">Continuous sneezing</option>
+                  <option value="phlegm">Phlegm</option>
+                  <option value="congestion">Congestion</option>
+                </optgroup>
+                <optgroup label="Gastrointestinal issues">
+                  <option value="stomach_pain">Stomach pain</option>
+                  <option value="vomiting">Vomiting</option>
+                  <option value="weight_loss">Weight loss</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="constipation">Constipation</option>
+                  <option value="abdominal_pain">Abdominal pain</option>
+                  <option value="belly_pain">Belly pain</option>
+                  <option value="diarrhoea">Diarrhoea</option>
+                  <option value="passage_of_gases">Passage of gases</option>
+                  <option value="increased_appetite">Increased appetite</option>
+                </optgroup>
+                <optgroup label="Cardiovascular symptoms">
+                  <option value="chest_pain">Chest pain</option>
+                  <option value="fast_heart_rate">Fast heart rate</option>
+                  <option value="palpitations">Palpitations</option>
+                </optgroup>
+                <optgroup label="Tiredness/Pain/Shivers/Fever">
+                  <option value="shivering">Shivering</option>
+                  <option value="joint_pain">Joint pain</option>
+                  <option value="fatigue">Fatigue</option>
+                  <option value="restlessness">Restlessness</option>
+                  <option value="lethargy">Lethargy</option>
+                  <option value="high_fever">High fever</option>
+                  <option value="pain_behind_the_eyes">Pain behind the eyes</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="neck_pain">Neck pain</option>
+                  <option value="knee_pain">Knee pain</option>
+                  <option value="muscle_weakness">Muscle weakness</option>
+                  <option value="muscle_pain">Muscle pain</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="dizziness">Dizziness</option>
+                </optgroup>
+                <optgroup label="Other symptoms/habits">
+                  <option value="dark_urine">Dark urine</option>
+                  <option value="yellowing_of_eyes">Yellowing of eyes</option>
+                  <option value="malaise">Malaise</option>
+                  <option value="puffy_face_and_eyes">Puffy face and eyes</option>
+                  <option value="irritability">Irritability</option>
+                  <option value="abnormal_menstruation">Abnormal menstruation</option>
+                  <option value="lack_of_concentration">Lack of concentration</option>
+                  <option value="visual_disturbances">Visual disturbances</option>
+                  <option value="coma">Coma</option>
+                  <option value="history_of_alcohol_consumption">History of alcohol consumption</option>
+                  <option value="blood_in_sputum">Blood In Sputum</option>
+                </optgroup>
+              </select>
+              <br><br>
+              <label for="symptom2">Symptom 2: </label>
+              <select name="symptom2" id="symptom2">
+                <optgroup label="dermatological symptoms">
+                  <option value="None">None</option>
+                  <option value="itching">Itching</option>
+                  <option value="yellow_crust_ooze">Yellow crust ooze</option>
+                  <option value="inflammatory_nails">Inflammatory nails</option>
+                </optgroup>
+                <optgroup label="Respiratory symptoms">
+                  <option value="continuous_sneezing">Continuous sneezing</option>
+                  <option value="phlegm">Phlegm</option>
+                  <option value="congestion">Congestion</option>
+                </optgroup>
+                <optgroup label="Gastrointestinal issues">
+                  <option value="stomach_pain">Stomach pain</option>
+                  <option value="vomiting">Vomiting</option>
+                  <option value="weight_loss">Weight loss</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="constipation">Constipation</option>
+                  <option value="abdominal_pain">Abdominal pain</option>
+                  <option value="belly_pain">Belly pain</option>
+                  <option value="diarrhoea">Diarrhoea</option>
+                  <option value="passage_of_gases">Passage of gases</option>
+                  <option value="increased_appetite">Increased appetite</option>
+                </optgroup>
+                <optgroup label="Cardiovascular symptoms">
+                  <option value="chest_pain">Chest pain</option>
+                  <option value="fast_heart_rate">Fast heart rate</option>
+                  <option value="palpitations">Palpitations</option>
+                </optgroup>
+                <optgroup label="Tiredness/Pain/Shivers/Fever">
+                  <option value="shivering">Shivering</option>
+                  <option value="joint_pain">Joint pain</option>
+                  <option value="fatigue">Fatigue</option>
+                  <option value="restlessness">Restlessness</option>
+                  <option value="lethargy">Lethargy</option>
+                  <option value="high_fever">High fever</option>
+                  <option value="pain_behind_the_eyes">Pain behind the eyes</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="neck_pain">Neck pain</option>
+                  <option value="knee_pain">Knee pain</option>
+                  <option value="muscle_weakness">Muscle weakness</option>
+                  <option value="muscle_pain">Muscle pain</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="dizziness">Dizziness</option>
+                </optgroup>
+                <optgroup label="Other symptoms/habits">
+                  <option value="dark_urine">Dark urine</option>
+                  <option value="yellowing_of_eyes">Yellowing of eyes</option>
+                  <option value="malaise">Malaise</option>
+                  <option value="puffy_face_and_eyes">Puffy face and eyes</option>
+                  <option value="irritability">Irritability</option>
+                  <option value="abnormal_menstruation">Abnormal menstruation</option>
+                  <option value="lack_of_concentration">Lack of concentration</option>
+                  <option value="visual_disturbances">Visual disturbances</option>
+                  <option value="coma">Coma</option>
+                  <option value="history_of_alcohol_consumption">History of alcohol consumption</option>
+                  <option value="blood_in_sputum">Blood In Sputum</option>
+                </optgroup>
+              </select>
+              <br><br>
+              <label for="symptom3">Symptom 3: </label>
+              <select name="symptom3" id="symptom3">
+                <optgroup label="dermatological symptoms">
+                  <option value="None">None</option>
+                  <option value="itching">Itching</option>
+                  <option value="yellow_crust_ooze">Yellow crust ooze</option>
+                  <option value="inflammatory_nails">Inflammatory nails</option>
+                </optgroup>
+                <optgroup label="Respiratory symptoms">
+                  <option value="continuous_sneezing">Continuous sneezing</option>
+                  <option value="phlegm">Phlegm</option>
+                  <option value="congestion">Congestion</option>
+                </optgroup>
+                <optgroup label="Gastrointestinal issues">
+                  <option value="stomach_pain">Stomach pain</option>
+                  <option value="vomiting">Vomiting</option>
+                  <option value="weight_loss">Weight loss</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="constipation">Constipation</option>
+                  <option value="abdominal_pain">Abdominal pain</option>
+                  <option value="belly_pain">Belly pain</option>
+                  <option value="diarrhoea">Diarrhoea</option>
+                  <option value="passage_of_gases">Passage of gases</option>
+                  <option value="increased_appetite">Increased appetite</option>
+                </optgroup>
+                <optgroup label="Cardiovascular symptoms">
+                  <option value="chest_pain">Chest pain</option>
+                  <option value="fast_heart_rate">Fast heart rate</option>
+                  <option value="palpitations">Palpitations</option>
+                </optgroup>
+                <optgroup label="Tiredness/Pain/Shivers/Fever">
+                  <option value="shivering">Shivering</option>
+                  <option value="joint_pain">Joint pain</option>
+                  <option value="fatigue">Fatigue</option>
+                  <option value="restlessness">Restlessness</option>
+                  <option value="lethargy">Lethargy</option>
+                  <option value="high_fever">High fever</option>
+                  <option value="pain_behind_the_eyes">Pain behind the eyes</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="neck_pain">Neck pain</option>
+                  <option value="knee_pain">Knee pain</option>
+                  <option value="muscle_weakness">Muscle weakness</option>
+                  <option value="muscle_pain">Muscle pain</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="dizziness">Dizziness</option>
+                </optgroup>
+                <optgroup label="Other symptoms/habits">
+                  <option value="dark_urine">Dark urine</option>
+                  <option value="yellowing_of_eyes">Yellowing of eyes</option>
+                  <option value="malaise">Malaise</option>
+                  <option value="puffy_face_and_eyes">Puffy face and eyes</option>
+                  <option value="irritability">Irritability</option>
+                  <option value="abnormal_menstruation">Abnormal menstruation</option>
+                  <option value="lack_of_concentration">Lack of concentration</option>
+                  <option value="visual_disturbances">Visual disturbances</option>
+                  <option value="coma">Coma</option>
+                  <option value="history_of_alcohol_consumption">History of alcohol consumption</option>
+                  <option value="blood_in_sputum">Blood In Sputum</option>
+                </optgroup>
+              </select>
+              <br><br>
+              <label for="symptom4">Symptom 4: </label>
+              <select name="symptom4" id="symptom4">
+                <optgroup label="dermatological symptoms">
+                  <option value="None">None</option>
+                  <option value="itching">Itching</option>
+                  <option value="yellow_crust_ooze">Yellow crust ooze</option>
+                  <option value="inflammatory_nails">Inflammatory nails</option>
+                </optgroup>
+                <optgroup label="Respiratory symptoms">
+                  <option value="continuous_sneezing">Continuous sneezing</option>
+                  <option value="phlegm">Phlegm</option>
+                  <option value="congestion">Congestion</option>
+                </optgroup>
+                <optgroup label="Gastrointestinal issues">
+                  <option value="stomach_pain">Stomach pain</option>
+                  <option value="vomiting">Vomiting</option>
+                  <option value="weight_loss">Weight loss</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="constipation">Constipation</option>
+                  <option value="abdominal_pain">Abdominal pain</option>
+                  <option value="belly_pain">Belly pain</option>
+                  <option value="diarrhoea">Diarrhoea</option>
+                  <option value="passage_of_gases">Passage of gases</option>
+                  <option value="increased_appetite">Increased appetite</option>
+                </optgroup>
+                <optgroup label="Cardiovascular symptoms">
+                  <option value="chest_pain">Chest pain</option>
+                  <option value="fast_heart_rate">Fast heart rate</option>
+                  <option value="palpitations">Palpitations</option>
+                </optgroup>
+                <optgroup label="Tiredness/Pain/Shivers/Fever">
+                  <option value="shivering">Shivering</option>
+                  <option value="joint_pain">Joint pain</option>
+                  <option value="fatigue">Fatigue</option>
+                  <option value="restlessness">Restlessness</option>
+                  <option value="lethargy">Lethargy</option>
+                  <option value="high_fever">High fever</option>
+                  <option value="pain_behind_the_eyes">Pain behind the eyes</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="neck_pain">Neck pain</option>
+                  <option value="knee_pain">Knee pain</option>
+                  <option value="muscle_weakness">Muscle weakness</option>
+                  <option value="muscle_pain">Muscle pain</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="dizziness">Dizziness</option>
+                </optgroup>
+                <optgroup label="Other symptoms/habits">
+                  <option value="dark_urine">Dark urine</option>
+                  <option value="yellowing_of_eyes">Yellowing of eyes</option>
+                  <option value="malaise">Malaise</option>
+                  <option value="puffy_face_and_eyes">Puffy face and eyes</option>
+                  <option value="irritability">Irritability</option>
+                  <option value="abnormal_menstruation">Abnormal menstruation</option>
+                  <option value="lack_of_concentration">Lack of concentration</option>
+                  <option value="visual_disturbances">Visual disturbances</option>
+                  <option value="coma">Coma</option>
+                  <option value="history_of_alcohol_consumption">History of alcohol consumption</option>
+                  <option value="blood_in_sputum">Blood In Sputum</option>
+                </optgroup>
+              </select>
+              <br><br>
+              <label for="symptom5">Symptom 5: </label>
+              <select name="symptom5" id="symptom5">
+                <optgroup label="dermatological symptoms">
+                  <option value="None">None</option>
+                  <option value="itching">Itching</option>
+                  <option value="yellow_crust_ooze">Yellow crust ooze</option>
+                  <option value="inflammatory_nails">Inflammatory nails</option>
+                </optgroup>
+                <optgroup label="Respiratory symptoms">
+                  <option value="continuous_sneezing">Continuous sneezing</option>
+                  <option value="phlegm">Phlegm</option>
+                  <option value="congestion">Congestion</option>
+                </optgroup>
+                <optgroup label="Gastrointestinal issues">
+                  <option value="stomach_pain">Stomach pain</option>
+                  <option value="vomiting">Vomiting</option>
+                  <option value="weight_loss">Weight loss</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="constipation">Constipation</option>
+                  <option value="abdominal_pain">Abdominal pain</option>
+                  <option value="belly_pain">Belly pain</option>
+                  <option value="diarrhoea">Diarrhoea</option>
+                  <option value="passage_of_gases">Passage of gases</option>
+                  <option value="increased_appetite">Increased appetite</option>
+                </optgroup>
+                <optgroup label="Cardiovascular symptoms">
+                  <option value="chest_pain">Chest pain</option>
+                  <option value="fast_heart_rate">Fast heart rate</option>
+                  <option value="palpitations">Palpitations</option>
+                </optgroup>
+                <optgroup label="Tiredness/Pain/Shivers/Fever">
+                  <option value="shivering">Shivering</option>
+                  <option value="joint_pain">Joint pain</option>
+                  <option value="fatigue">Fatigue</option>
+                  <option value="restlessness">Restlessness</option>
+                  <option value="lethargy">Lethargy</option>
+                  <option value="high_fever">High fever</option>
+                  <option value="pain_behind_the_eyes">Pain behind the eyes</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="neck_pain">Neck pain</option>
+                  <option value="knee_pain">Knee pain</option>
+                  <option value="muscle_weakness">Muscle weakness</option>
+                  <option value="muscle_pain">Muscle pain</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="dizziness">Dizziness</option>
+                </optgroup>
+                <optgroup label="Other symptoms/habits">
+                  <option value="dark_urine">Dark urine</option>
+                  <option value="yellowing_of_eyes">Yellowing of eyes</option>
+                  <option value="malaise">Malaise</option>
+                  <option value="puffy_face_and_eyes">Puffy face and eyes</option>
+                  <option value="irritability">Irritability</option>
+                  <option value="abnormal_menstruation">Abnormal menstruation</option>
+                  <option value="lack_of_concentration">Lack of concentration</option>
+                  <option value="visual_disturbances">Visual disturbances</option>
+                  <option value="coma">Coma</option>
+                  <option value="history_of_alcohol_consumption">History of alcohol consumption</option>
+                  <option value="blood_in_sputum">Blood In Sputum</option>
+                </optgroup>
+              </select>
+              <br><br>
+              <label for="symptom6">Symptom 6: </label>
+              <select name="symptom6" id="symptom5">
+                <optgroup label="dermatological symptoms">
+                  <option value="None">None</option>
+                  <option value="itching">Itching</option>
+                  <option value="yellow_crust_ooze">Yellow crust ooze</option>
+                  <option value="inflammatory_nails">Inflammatory nails</option>
+                </optgroup>
+                <optgroup label="Respiratory symptoms">
+                  <option value="continuous_sneezing">Continuous sneezing</option>
+                  <option value="phlegm">Phlegm</option>
+                  <option value="congestion">Congestion</option>
+                </optgroup>
+                <optgroup label="Gastrointestinal issues">
+                  <option value="stomach_pain">Stomach pain</option>
+                  <option value="vomiting">Vomiting</option>
+                  <option value="weight_loss">Weight loss</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="constipation">Constipation</option>
+                  <option value="abdominal_pain">Abdominal pain</option>
+                  <option value="belly_pain">Belly pain</option>
+                  <option value="diarrhoea">Diarrhoea</option>
+                  <option value="passage_of_gases">Passage of gases</option>
+                  <option value="increased_appetite">Increased appetite</option>
+                </optgroup>
+                <optgroup label="Cardiovascular symptoms">
+                  <option value="chest_pain">Chest pain</option>
+                  <option value="fast_heart_rate">Fast heart rate</option>
+                  <option value="palpitations">Palpitations</option>
+                </optgroup>
+                <optgroup label="Tiredness/Pain/Shivers/Fever">
+                  <option value="shivering">Shivering</option>
+                  <option value="joint_pain">Joint pain</option>
+                  <option value="fatigue">Fatigue</option>
+                  <option value="restlessness">Restlessness</option>
+                  <option value="lethargy">Lethargy</option>
+                  <option value="high_fever">High fever</option>
+                  <option value="pain_behind_the_eyes">Pain behind the eyes</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="neck_pain">Neck pain</option>
+                  <option value="knee_pain">Knee pain</option>
+                  <option value="muscle_weakness">Muscle weakness</option>
+                  <option value="muscle_pain">Muscle pain</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="dizziness">Dizziness</option>
+                </optgroup>
+                <optgroup label="Other symptoms/habits">
+                  <option value="dark_urine">Dark urine</option>
+                  <option value="yellowing_of_eyes">Yellowing of eyes</option>
+                  <option value="malaise">Malaise</option>
+                  <option value="puffy_face_and_eyes">Puffy face and eyes</option>
+                  <option value="irritability">Irritability</option>
+                  <option value="abnormal_menstruation">Abnormal menstruation</option>
+                  <option value="lack_of_concentration">Lack of concentration</option>
+                  <option value="visual_disturbances">Visual disturbances</option>
+                  <option value="coma">Coma</option>
+                  <option value="history_of_alcohol_consumption">History of alcohol consumption</option>
+                  <option value="blood_in_sputum">Blood In Sputum</option>
+                </optgroup>
+              </select>
+              <br><br>
+              <label for="symptom7">Symptom 7: </label>
+              <select name="symptom7" id="symptom7">
+                <optgroup label="dermatological symptoms">
+                  <option value="None">None</option>
+                  <option value="itching">Itching</option>
+                  <option value="yellow_crust_ooze">Yellow crust ooze</option>
+                  <option value="inflammatory_nails">Inflammatory nails</option>
+                </optgroup>
+                <optgroup label="Respiratory symptoms">
+                  <option value="continuous_sneezing">Continuous sneezing</option>
+                  <option value="phlegm">Phlegm</option>
+                  <option value="congestion">Congestion</option>
+                </optgroup>
+                <optgroup label="Gastrointestinal issues">
+                  <option value="stomach_pain">Stomach pain</option>
+                  <option value="vomiting">Vomiting</option>
+                  <option value="weight_loss">Weight loss</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="constipation">Constipation</option>
+                  <option value="abdominal_pain">Abdominal pain</option>
+                  <option value="belly_pain">Belly pain</option>
+                  <option value="diarrhoea">Diarrhoea</option>
+                  <option value="passage_of_gases">Passage of gases</option>
+                  <option value="increased_appetite">Increased appetite</option>
+                </optgroup>
+                <optgroup label="Cardiovascular symptoms">
+                  <option value="chest_pain">Chest pain</option>
+                  <option value="fast_heart_rate">Fast heart rate</option>
+                  <option value="palpitations">Palpitations</option>
+                </optgroup>
+                <optgroup label="Tiredness/Pain/Shivers/Fever">
+                  <option value="shivering">Shivering</option>
+                  <option value="joint_pain">Joint pain</option>
+                  <option value="fatigue">Fatigue</option>
+                  <option value="restlessness">Restlessness</option>
+                  <option value="lethargy">Lethargy</option>
+                  <option value="high_fever">High fever</option>
+                  <option value="pain_behind_the_eyes">Pain behind the eyes</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="neck_pain">Neck pain</option>
+                  <option value="knee_pain">Knee pain</option>
+                  <option value="muscle_weakness">Muscle weakness</option>
+                  <option value="muscle_pain">Muscle pain</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="dizziness">Dizziness</option>
+                </optgroup>
+                <optgroup label="Other symptoms/habits">
+                  <option value="dark_urine">Dark urine</option>
+                  <option value="yellowing_of_eyes">Yellowing of eyes</option>
+                  <option value="malaise">Malaise</option>
+                  <option value="puffy_face_and_eyes">Puffy face and eyes</option>
+                  <option value="irritability">Irritability</option>
+                  <option value="abnormal_menstruation">Abnormal menstruation</option>
+                  <option value="lack_of_concentration">Lack of concentration</option>
+                  <option value="visual_disturbances">Visual disturbances</option>
+                  <option value="coma">Coma</option>
+                  <option value="history_of_alcohol_consumption">History of alcohol consumption</option>
+                  <option value="blood_in_sputum">Blood In Sputum</option>
+                </optgroup>
+              </select>
+              <br><br>
+              <label for="symptom8">Symptom 8: </label>
+              <select name="symptom8" id="symptom8">
+                <optgroup label="dermatological symptoms">
+                  <option value="None">None</option>
+                  <option value="itching">Itching</option>
+                  <option value="yellow_crust_ooze">Yellow crust ooze</option>
+                  <option value="inflammatory_nails">Inflammatory nails</option>
+                </optgroup>
+                <optgroup label="Respiratory symptoms">
+                  <option value="continuous_sneezing">Continuous sneezing</option>
+                  <option value="phlegm">Phlegm</option>
+                  <option value="congestion">Congestion</option>
+                </optgroup>
+                <optgroup label="Gastrointestinal issues">
+                  <option value="stomach_pain">Stomach pain</option>
+                  <option value="vomiting">Vomiting</option>
+                  <option value="weight_loss">Weight loss</option>
+                  <option value="nausea">Nausea</option>
+                  <option value="constipation">Constipation</option>
+                  <option value="abdominal_pain">Abdominal pain</option>
+                  <option value="belly_pain">Belly pain</option>
+                  <option value="diarrhoea">Diarrhoea</option>
+                  <option value="passage_of_gases">Passage of gases</option>
+                  <option value="increased_appetite">Increased appetite</option>
+                </optgroup>
+                <optgroup label="Cardiovascular symptoms">
+                  <option value="chest_pain">Chest pain</option>
+                  <option value="fast_heart_rate">Fast heart rate</option>
+                  <option value="palpitations">Palpitations</option>
+                </optgroup>
+                <optgroup label="Tiredness/Pain/Shivers/Fever">
+                  <option value="shivering">Shivering</option>
+                  <option value="joint_pain">Joint pain</option>
+                  <option value="fatigue">Fatigue</option>
+                  <option value="restlessness">Restlessness</option>
+                  <option value="lethargy">Lethargy</option>
+                  <option value="high_fever">High fever</option>
+                  <option value="pain_behind_the_eyes">Pain behind the eyes</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="neck_pain">Neck pain</option>
+                  <option value="knee_pain">Knee pain</option>
+                  <option value="muscle_weakness">Muscle weakness</option>
+                  <option value="muscle_pain">Muscle pain</option>
+                  <option value="mild_fever">Mild fever</option>
+                  <option value="dizziness">Dizziness</option>
+                </optgroup>
+                <optgroup label="Other symptoms/habits">
+                  <option value="dark_urine">Dark urine</option>
+                  <option value="yellowing_of_eyes">Yellowing of eyes</option>
+                  <option value="malaise">Malaise</option>
+                  <option value="puffy_face_and_eyes">Puffy face and eyes</option>
+                  <option value="irritability">Irritability</option>
+                  <option value="abnormal_menstruation">Abnormal menstruation</option>
+                  <option value="lack_of_concentration">Lack of concentration</option>
+                  <option value="visual_disturbances">Visual disturbances</option>
+                  <option value="coma">Coma</option>
+                  <option value="history_of_alcohol_consumption">History of alcohol consumption</option>
+                  <option value="blood_in_sputum">Blood In Sputum</option>
+                </optgroup>
+              </select>
+              <br><br>
+                <div class="sub">
+                  <input type="submit" value="Predict" class="btn">
+              </div>
+          </form>
+    </body>
+</html>
